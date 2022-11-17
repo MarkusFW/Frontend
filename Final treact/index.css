@@ -15,6 +15,15 @@ DEFAULT STLYES
 
 */
 
+li {
+    list-style: none;
+    text-decoration: none;
+}
+
+.white {
+    color: white;
+}
+
 .green {
     color: green;
 }
@@ -402,4 +411,98 @@ VALUES
 
 .fa-dollar-sign {
     margin-top: 7px;
+}
+
+
+/*
+
+PRICING
+
+*/
+
+.pricing_container {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.pricing__container--para {
+    width: 600px;
+}
+
+.pricing__container--plans-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.pricing__container--plans {
+    width: 32%;
+    max-width: 30%;
+    border-radius: 10px;
+    padding: 0 24px;
+    margin-right: 40px;
+    background-color: rgb(250, 239, 239);
+}
+
+.pricing__container--person {
+    margin-top: 40px;
+}
+
+.pricing__container--plans-business {
+    background-color: rgb(100, 21, 255);
+    background-image: linear-gradient(135deg, rgb(76, 81, 191) 0%, rgb(102, 126, 234) 100%);
+    background-color: rgb(100 21 255 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(247 250 252 / var(--tw-text-opacity));
+}
+
+.pricing__container--person {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.pricing__container--plans-price {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.pricing__container--plans-period {
+   color:#a0aec0 ; 
+   margin-bottom: 60px;
+   font-size: 16px;
+   letter-spacing: 1px;
+   font-weight: 700;
+}
+
+.pricing__container--plans-period-business {
+    color: white;
+    letter-spacing: 2px;
+}
+
+.pricing__container--subscription-listing {
+    margin-bottom: 16px;
+}
+
+.pricing__container--subscription-listing:last-child {
+    margin-bottom: 60px;
+}
+
+.btn__personal {
+    background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+}
+
+.btn__business {
+    background-color: white;
+    color: purple;
+    font-weight: bold;
+}
+
+.btn__enterprise {
+    background: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
+    margin-bottom: 32px;
 }
