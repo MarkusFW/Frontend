@@ -15,6 +15,14 @@ DEFAULT STLYES
 
 */
 
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
 .section__container--first {
     font-weight: 700;
     margin-top: 105px;
@@ -291,7 +299,7 @@ QUALITY
 
 /*
 
-QUALITY
+STEPS
 
 */
 
@@ -341,4 +349,57 @@ QUALITY
     text-align: left;
     width: 90%;
     margin-bottom: 24px;
+}
+
+
+/*
+
+VALUES
+
+*/
+
+
+.values__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 160px;
+}
+
+.values__container--text {
+    width: 50%;
+    padding-right: 100px;
+}
+
+.values__container--figure {
+    width: 50%;
+}
+
+.values__container--img {
+    width: 100%;
+    margin-top: 130px;
+}
+
+.values__container--icons {
+    display: flex;
+}
+
+.values__container--icons-figure {
+    display: flex;
+}
+
+.values__container--icons-para {
+    margin: 16px 0px 42px 0px;
+}
+
+.values__container--icons-h2 {
+    margin-left: 16px;
+}
+
+.fa-suitcase {
+    margin-top: 7px;
+}
+
+.fa-dollar-sign {
+    margin-top: 7px;
 }
