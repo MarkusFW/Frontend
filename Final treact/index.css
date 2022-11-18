@@ -15,6 +15,10 @@ DEFAULT STLYES
 
 */
 
+.fa-star {
+    color: rgb(246, 173, 85);
+}
+
 li {
     list-style: none;
     text-decoration: none;
@@ -505,4 +509,90 @@ PRICING
 .btn__enterprise {
     background: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
     margin-bottom: 32px;
+}
+
+
+/*
+
+TESTIONONIAL
+
+*/
+
+
+.testimonial__container {
+    margin-top: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial__container-figure {
+    width: 50%;
+}
+
+.testimonial__container-img {
+    width: 100%;
+}
+
+.testimonial__container--text {
+    width: 50%;
+    padding-left: 64px;
+}
+
+.testimonial__container--text-h2 {
+    margin: 16px 0;
+    color: #243E63;
+    font-size: 20px;
+}
+
+.testimonial__container--text-para {
+    margin-bottom: 40px;
+}
+
+.testimonial__container--text-witness{
+    display: flex;
+}
+
+.testimonial__container--text-figure {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    margin-bottom: 28px;
+}
+
+.testimonial__container--text-img {
+    width: 90px;
+}
+
+
+.testimonial__witness--text-wrapper {
+    margin-left: 24px;
+    margin-top: 16px;
+}
+
+.testimonial__container--text-name {
+    font-size: 20px;
+    color: #243E63;
+}
+
+.testimonial__containe--text-proffession {
+    font-size: 16px;
+    color: #7c8ba1;
+}
+
+
+.testimonial__witness--figure-wrapper {
+    display: flex;
+
+}
+
+.testimonial__witness {
+    display: flex;
+    justify-content: space-between;
+}
+
+.testimonial__btn {
+    margin-left: 360px;
 }
