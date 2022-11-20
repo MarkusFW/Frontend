@@ -157,6 +157,7 @@ LANDING PAGE
     margin: 32px 0;
     text-align: left;
     line-height: 1.5;
+    font-weight: 100;
 }
 
 .landing__container--email {
@@ -266,6 +267,7 @@ FEATURES
 .features__container--service-h2 {
     text-align: left;
     margin-bottom: 24px;
+    color: #243E63;
 }
 
 .features__container--service--para {
@@ -740,19 +742,18 @@ MEDIA
 
     .pricing__container--plans-wrapper {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         width: 100%;
-        margin-left: 400px;
+        align-items: center;
     }
 
     .pricing__container--plans {
-        width: 32%;
-        max-width: 20%;
         border-radius: 10px;
+        width: 100%;
         padding: 0 24px;
         margin-right: 40px;
         background-color: rgb(250, 239, 239);
-
+        margin-top: 60px;
     }
 
 
@@ -781,11 +782,157 @@ MEDIA
         font-size: 16px;
         color: #7c8ba1;
     }
+
+    .btn__business {
+        background-color: white;
+        color: purple;
+        font-weight: bold;
+        margin-bottom: 32px;
+    }
+
+    .btn__personal {
+        margin-bottom: 32px;
+    }
+
+    .section__container--first-pricing {
+        margin-right: 36px;
+    }
 }
 
 
+
+@media (max-width: 1270px) {
+    .testimonial__container--text-figure {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 28px;
+    }
+    
+    .testimonial__container--text-img {
+        width: 80px;
+    }
+
+    .testimonial__witness {
+        position: absolute;
+    }
+
+    .testimonial__btn {
+        margin-left: 300px;
+    }
+
+  
+    .values__container--icons-wrapper-suitcase {
+        margin-left: 20px;
+    }
+}
+
+
+/* TESTIMONIAL__BTN MEDIA */
+
+@media (max-width: 1239px) {
+    .testimonial__btn {
+        margin-left: 250px;
+    }
+}
+
+@media (max-width: 1139px) {
+    .testimonial__btn {
+        margin-left: 220px;
+    }
+}
+
+@media (max-width: 1090px) {
+    .testimonial__btn {
+        margin-left: 180px;
+    }
+}
+
+@media (max-width: 1090px) {
+    .testimonial__btn {
+        margin-left: 180px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .testimonial__btn {
+        margin-left: 140px;
+    }
+}
+
+
+
+    
+/* LANDING__CONTAINER__BTN EMDIA */
+
+@media (max-width: 1250px) {
+    .landing__container--btn {
+        position: absolute;
+        top: 12px;
+        right: 0px;
+    }
+}
+
+@media (max-width: 1180px) {
+    .landing__container--btn {
+        position: absolute;
+        top: 12px;
+        right: -20px;
+    }
+}
+
+@media (max-width: 1140px) {
+    .landing__container--btn {
+        position: absolute;
+        top: 12px;
+        right: -40px;
+    }
+}
+
+@media (max-width: 1040px) {
+    .landing__container--btn {
+        position: absolute;
+        top: 12px;
+        right: -80px;
+    }
+}
+
+@media (max-width: 950px) {
+    .landing__container--btn {
+        position: absolute;
+        top: 12px;
+        right: -120px;
+    }
+}
+
+
+
 /*small phnes, tablets, large phones */
+
 @media (max-width: 768px) {
+
+    .section__container--first {
+        font-size: 14px;
+    }
+
+    .section__container--first-steps {
+        text-align: center;
+    }
+
+    .landing__container--h1 {
+        font-size: 40px;
+    }
+    
+    .section__container--heading {
+        font-size: 34px;
+    }
+
+    
+    .section__container--heading-steps {
+        text-align: center;
+    }
+
     .landing__container--btn {
         position: absolute;
         top: 12px;
@@ -833,5 +980,43 @@ MEDIA
     .quality__container--img {
         width: 140%;
         margin-top:60px;
+    }
+
+    .values__container--icons-wrapper-suitcase {
+        width: 70%;
+    }
+
+    .values__container--icons-h2 {
+        font-size: 20px;
+    }
+
+    .testimonial__container--text-witness {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .testimonial__witness {
+      margin-left: 35px;
+    }
+
+    .testimonial__btn {
+        margin-left: 0;
+        margin-top: 80px;
+        align-self: center;
+        margin-right: 55px;
+    }
+
+    .testimonial__container--text-figure {
+        align-self: center;
+    }
+   
+    .pricing__container--plans {
+        border-radius: 10px;
+        width: 100%;
+        max-width: 50%;
+        padding: 0 24px; 
+        margin-right: 40px;
+        background-color: rgb(250, 239, 239);
+        margin-top: 60px;
     }
 }
