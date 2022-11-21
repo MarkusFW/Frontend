@@ -1,13 +1,16 @@
-let cash = 100
-let price = 200
-let difference = cash - price
+let cash = 45
+let price = 40
+let isStoreOpen = true
 
-if (cash > price) {
-    console.log (`you paid extra , here is your ${difference} dollars change`)
-}
-else if (cash === price) {
-    console.log("you paid the exact price, have a nice day!")
-}
-else {
-    console.log (`you dont have enough cash , you still owe ${difference * 1} dollars`)
-}
+let print = cash >= price && isStoreOpen ? "print receipt" : "do not print receipt"
+console.log(print);
+
+
+
+
+
+// let subscirbed = false
+// let loggedIn = true
+
+// let str = subscirbed  loggedIn ? "show the video" : "hide the video"
+// console.log(str);
