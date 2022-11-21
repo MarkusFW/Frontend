@@ -1,16 +1,10 @@
-let cash = 45
-let price = 40
-let isStoreOpen = true
 
-let print = cash >= price && isStoreOpen ? "print receipt" : "do not print receipt"
-console.log(print);
+//Funciton definition
+function welcomePersonToFES (firstName, lastName) {
+    console.log(`Welcome to FES", ${firstName} ${lastName}`)
+}
 
-
-
-
-
-// let subscirbed = false
-// let loggedIn = true
-
-// let str = subscirbed  loggedIn ? "show the video" : "hide the video"
-// console.log(str);
+//Call the function
+welcomePersonToFES("Markus", "FW");
+welcomePersonToFES("Allu", "FW");
+welcomePersonToFES("Skyla", "Furnes-Wilkens");
