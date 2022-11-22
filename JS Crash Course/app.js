@@ -1,17 +1,31 @@
 
 let users = [{
     username: `Markus`,
-    Email: `markus@gmail.com`,
+    email: `markus@gmail.com`,
+    password: `test123`, 
     subscirptionStatus: `VIP`,
     discordId: `Markus FW#0001`,
     lessonsCompleted: [0, 1]
 },  
 {
     username: `Allu`,
-    Email: `Allu@gmail.com`,
+    email: `Allu@gmail.com`,
+    password: `allu123`, 
     subscirptionStatus: `VIP`,
     discordId: `Allu FW#0002`,
     lessonsCompleted: [0, 1, 2 , 3]
 }]
 
-console.log(users[1])
+function login(email, password) {
+    for (let i = 0; i < users.length; ++i) {
+        
+        if (users[i].email === email) {
+            console.log(email, password)
+            if (users[i].password === password) {
+                console.log(`Log the user in - the details are correct`)
+            }
+        }
+    }
+}
+
+login(`Allu@gmail.com`, `allu123`)
