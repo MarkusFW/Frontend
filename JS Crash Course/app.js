@@ -1,18 +1,14 @@
-// let arr = [1, 4, 9 , 16]
 
-// let newArray = arr.map (element => undefined)
+let user = {
+    username: `Markus`,
+    Email: `markus@gmail.com`,
+    subscirptionStatus: `VIP`,
+    discordId: `Markus FW#0001`,
+    lessonsCompleted: [0, 1]
+}
 
-// console.log(newArray)
+console.log(user.username)
 
+console.log(user.subscirptionStatus)
 
-let dollars = [1, 5, 10, 3]
-
-let cents = dollars.map (elements => elements * 100 )
-
-console.log(cents)
-
-let dollars2 = [0, 10, 20]
-
-let cents2 = dollars2.map (elements => elements * 100 )
-
-console.log(cents2)
+console.log(user.lessonsCompleted.map(element => element * 2))
