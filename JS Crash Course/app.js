@@ -1,24 +1,18 @@
-// let arr = [20, 30, 40, 50, 100]
+// let arr = [1, 4, 9 , 16]
 
-// let newArr = arr.filter(element => element < 50)
+// let newArray = arr.map (element => undefined)
 
-// console.log(newArr)
-
-
-let grades = [`A+`, `A`, `FAIL`]
-
-let goodGrades = grades.filter(element => element !== `FAIL` )
-console.log(goodGrades)
+// console.log(newArray)
 
 
+let dollars = [1, 5, 10, 3]
 
-let grades1 = [`FAIL`, `FAIL`, `B`]
+let cents = dollars.map (elements => elements * 100 )
 
-let newArr2 = grades1.filter(element => element < `FAIL` )
-console.log(newArr2)
+console.log(cents)
 
+let dollars2 = [0, 10, 20]
 
-let grades2 = [`FAIL`]
+let cents2 = dollars2.map (elements => elements * 100 )
 
-let newArr3 = grades2.filter(element => element < `FAIL` )
-console.log(newArr3)
+console.log(cents2)
