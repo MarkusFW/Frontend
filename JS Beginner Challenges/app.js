@@ -1,7 +1,8 @@
 
 
-function appendFronted(string1) {
-    return string1 + `Frontend`
+function sumGreaterThan100(num1, num2) {
+   return num1 + num2 >= 100
+
 }
 
-console.log(appendFronted(`Apple`))
+console.log(sumGreaterThan100(1,-10))
