@@ -1,5 +1,5 @@
-function calcPerimeter(length, width) {
-    return 2 * length + 2 * width
+function calcareaTriangle(base, height) {
+    return 0.5 * base * height
 }
 
-console.log(calcPerimeter(10, 20))
+console.log(calcareaTriangle(20, 20))
