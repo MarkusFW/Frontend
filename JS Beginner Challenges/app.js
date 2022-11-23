@@ -1,5 +1,7 @@
-function calcareaTriangle(base, height) {
-    return 0.5 * base * height
+
+
+function appendFronted(string1) {
+    return string1 + `Frontend`
 }
 
-console.log(calcareaTriangle(20, 20))
+console.log(appendFronted(`Apple`))
