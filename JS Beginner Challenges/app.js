@@ -1,8 +1,5 @@
+function hoursIntoSeconds(hour) {
+    return hour * 60 * 60;
+}
 
-let hours = [2, 10, 24]
-
-let cents = hours.map (elements => elements *3600)
-
-
-
-console.log(cents)
+console.log(hoursIntoSeconds(2))
