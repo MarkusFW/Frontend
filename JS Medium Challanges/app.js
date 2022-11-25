@@ -1,10 +1,14 @@
 
-function yoo (string) {
-    let reversedString = ``;
-    for (let i = 0; i < string.length; ++i) {
-       reversedString = string[i] + reversedString
+function yoo (array) {
+    let unFalse = []
+    for (let i = 0; i < array.length; ++i) {
+        if (!!array[i] === true) {
+            unFalse.push(true)
+        }
+        else if (!!array[i] === false)
+            unFalse.push(false)
     }
-    return reversedString
+    return unFalse
 }
 
-console.log(yoo(`abc`))
+console.log(yoo([`banana`, `apple`, 0, ``, 100]))
