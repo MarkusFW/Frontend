@@ -1,6 +1,10 @@
 
-function falsyOrTruthy(elem1, elem2) {
-    return (!elem1) ? elem1 : elem2
+function yoo (string) {
+    let reversedString = ``;
+    for (let i = 0; i < string.length; ++i) {
+       reversedString = string[i] + reversedString
+    }
+    return reversedString
 }
 
-console.log(falsyOrTruthy(0, 2))
+console.log(yoo(`abc`))
