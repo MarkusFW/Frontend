@@ -1,14 +1,11 @@
-function showRating (rating) {
-    let stars = ``
-    for (let i = 0; i < Math.floor(rating); ++i) {
-        stars += `*`
-        if (i !== Math.floor(rating) - 1) {
-            stars += ` `
-        }
-    }
-    if (!Number.isInteger(rating)) {
-        stars += ` .`
-    }
-    return stars
+function sortHighToLow(arr) {
+  return arr.sort((a, b) => b.price - a.price);
+
 }
-console.log(showRating(4.6))
+console.log(
+  sortHighToLow([
+    { id: 1, price: 50 },
+    { id: 2, price: 0 },
+    { id: 3, price: 600 },
+  ])
+);
