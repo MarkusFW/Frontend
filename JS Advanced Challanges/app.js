@@ -1,11 +1,13 @@
-function sortHighToLow(arr) {
-  return arr.sort((a, b) => b.price - a.price);
 
+
+async function firstSixIncomplete (usi) {
+    const promise = await fetch `https://jsonplaceholder.typicode.com/todos`
+    const result = await promise.json()
+    
+    let incompleteTasks = result.filter(elem => !elem.completed).slice(0, usi)
+
+    console.log(incompleteTasks)
 }
-console.log(
-  sortHighToLow([
-    { id: 1, price: 50 },
-    { id: 2, price: 0 },
-    { id: 3, price: 600 },
-  ])
-);
+
+
+firstSixIncomplete(6)
