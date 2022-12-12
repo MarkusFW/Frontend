@@ -1,29 +1,20 @@
 import "./App.css";
-import Todo from "./Components/Todo";
-import Title from "./Components/Title";
-import Modal from "./Components/Modal";
-import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Users from "./Pages/Users";
+import Nav from "./Components/Nav";
 
 function App() {
-const [showModal, setShowModal] = useState(false)
-
-
   return (
-    <div>
-      <Title />
-      <div>
-        <input type="text" onChange={(event) => {
-          console.log(event.target.value)
-        }}/>
-        <button onClick={() => setShowModal(true)}>Add To Do</button>
-      </div>
-      <div className="todo__wrapper">
-        <Todo title="Finish Frontend Simplified" />
-        <Todo title="Finish Interview Section" />
-        <Todo title="Land a $100K job" />
-      </div>
-      <div>{showModal ? <Modal modalTitle="Are you sure?" /> : null}</div>
-    </div>
+    <Router>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/users/:username" element={<Users />} />
+      </Routes>
+    </Router>
   );
 }
 
