@@ -1,8 +1,0 @@
-*{
-  box-sizing: border-box;
-}
-
-.todo__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}

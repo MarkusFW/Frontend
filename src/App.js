@@ -1,68 +1,58 @@
-import Nav from "./components/Nav";
-import React, { useState, useEffect } from "react";
-import Footer from "./components/Footer";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Books from "./pages/Books";
-import { books } from "./data";
-import BookInfo from "./pages/BookInfo";
-import Cart from "./pages/Cart";
+import React from "react";
+import "./App.css";
+import { auth } from "./firebase/init";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
+import Nav from "./Components/Nav.jsx";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [user, setUser] = React.useState({});
+  const [loading, setLoading] = React.useState(true);
 
-  function addToCart(book) {
-    setCart([...cart, { ...book, quantity: 1 }]);
+  React.useEffect(() => {
+    onAuthStateChanged(auth, (user => {
+      setLoading(false)
+      console.log(user)
+      user ? setUser(user) : setUser({})
+    }))
+  }, [])
+
+  function register() {
+    createUserWithEmailAndPassword(auth, "email@email.com", "test123")
+      .then((user) => {
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  function changeQuantity(book, quantity) {
-    setCart(
-      cart.map((item) =>
-        item.id === book.id ? { ...item, quantity: +quantity } : item
-      )
-    );
+  function login() {
+    signInWithEmailAndPassword(auth, "email@email.com", "test123")
+      .then(({ user }) => {
+        setUser(user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   }
 
-  function removeItem(item) {
-    setCart(cart.filter(book => book.id !== item.id))
-    console.log("remove item", item)
+  function logout() {
+    signOut(auth);
+    setUser({});
   }
-
-  function numberOfItems() {
-    let counter = 0
-    cart.forEach(item => {
-      counter += item.quantity
-    })
-    return counter
-  }
-
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
-
-
 
   return (
-    <Router>
-      <div className="App">
-        <Nav numberOfItems={(numberOfItems())} />
-        <Route path="/" exact component={Home} />
-        <Route path="/books" exact render={() => <Books books={books} />} />
-        <Route
-          path="/books/:id"
-          render={() => (
-            <BookInfo books={books} addToCart={addToCart} cart={cart} />
-          )}
-        />
-        <Route
-          path="/cart"
-          render={() => (
-            <Cart books={books} cart={cart} changeQuantity={changeQuantity} removeItem={removeItem} />
-          )}
-        />
-        <Footer />
-      </div>
-    </Router>
+    <div className="App">
+      <button onClick={register}>Register</button>
+      <button onClick={login}>Login</button>
+      <button onClick={logout}>Logout</button>
+      {loading ? 'Loading...' : user.email}
+    </div>
   );
 }
 

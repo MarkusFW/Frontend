@@ -1,14 +1,12 @@
-import { Link } from "react-router-dom"
+import React from 'react';
+import "../Components/Nav.css"
 
-function Nav() {
-    return(
-        <nav>
-        <Link to="/">Home</Link>
-        <Link to="/users/ronaldo">Ronaldo</Link>
-        <Link to="/users/messi">Messi</Link>
-        <Link to="/users/br4gg">David Bragg</Link>
-      </nav>
-    )
+const Nav = () => {
+    return (
+        <div>
+            <h1 className='hei'>test</h1>
+        </div>
+    );
 }
 
-export default Nav
+export default Nav;
