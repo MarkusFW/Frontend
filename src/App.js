@@ -1,57 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { auth } from "./firebase/init";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
-} from "firebase/auth";
+import { auth, db } from "./firebase/init";
+import { collection, addDoc, getDocs, getDoc, doc, query, where, updateDoc, deleteDoc } from "firebase/firestore";
 import Nav from "./Components/Nav.jsx";
 
 function App() {
-  const [user, setUser] = React.useState({});
-  const [loading, setLoading] = React.useState(true);
+  const [user, setUser] = useState({});
 
-  React.useEffect(() => {
-    onAuthStateChanged(auth, (user => {
-      setLoading(false)
-      console.log(user)
-      user ? setUser(user) : setUser({})
-    }))
-  }, [])
+  async function updatePosts() {
+    const hardCodedId= "r0zaS828mXC5xK8uZbD1"
+    const postRef = doc(db, "posts", hardCodedId )
+    const post =  await getPostById(hardCodedId)
+    const newPost = {
+      ...post,
+      title: "Land a 7000000K Job"
+    }
+    console.log(newPost)
+    updateDoc(postRef, newPost)
+   }
 
-  function register() {
-    createUserWithEmailAndPassword(auth, "email@email.com", "test123")
-      .then((user) => {
-        console.log(user);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+   function deletePost() {
+    const hardCodedId= "Z8qqUSXIWKdyR29iZ2TI"
+    const postRef = doc(db, "posts", hardCodedId )
+    deleteDoc(postRef)
   }
 
-  function login() {
-    signInWithEmailAndPassword(auth, "email@email.com", "test123")
-      .then(({ user }) => {
-        setUser(user);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+  async function getAllPosts() {
+    const { docs } = await getDocs(collection(db, "posts"));
+    const posts = docs.map((elem) => ({ ...elem.data(), id: elem.id })); // data is a function we get from firebase that makes the collection into javascript // spread operator "..." return a copy of the object
+    console.log(posts);
   }
 
-  function logout() {
-    signOut(auth);
-    setUser({});
+  function createPost() {
+    const post = {
+      title: "Finish Interview section",
+      describe: "Do Finish Frontend Simplfied",
+      uid: "1"
+    };
+    addDoc(collection(db, "posts"), post);
+  }
+
+  async function getPostById(id) {
+    const postRef = doc(db, "posts", id )
+    const postSnap = await getDoc(postRef)
+    return postSnap.data()
+  }
+
+  async function getPostByUid () {
+    const postCollectionRef = await query (
+      collection(db, "posts"),
+      where("uid", "==", user.id)
+    )
+    const { docs } = await getDocs(postCollectionRef);
+    console.log(docs.map(doc => doc.data()))
   }
 
   return (
     <div className="App">
-      <button onClick={register}>Register</button>
-      <button onClick={login}>Login</button>
-      <button onClick={logout}>Logout</button>
-      {loading ? 'Loading...' : user.email}
+      <Nav user={user} setUser={setUser} auth={auth} />
+      <button onClick={createPost}>Create Post</button>
+      <button onClick={getAllPosts}>Get All Posts</button>
+      <button onClick={getPostById}>Get Post By Id</button>
+      <button onClick={getPostByUid}>Get Post By Uid</button>
+      <button onClick={updatePosts}>Update Post</button>
+      <button onClick={deletePost}>Delete Post</button>
     </div>
   );
 }
