@@ -1,20 +1,26 @@
-import React from "react";
-import Discounted from "../components/Discounted";
-import Explore from "../components/Explore";
-import Featured from "../components/Featured";
-import Highlights from "../components/Highlights";
-import Landing from "../components/Landing";
+
+import React from 'react';
+import "./Home.css"
 
 const Home = () => {
-  return (
-    <>
-      <Landing />
-      <Highlights />
-      <Featured />
-      <Discounted />
-      <Explore />
-    </>
-  );
-};
+    return (
+        <div className='home'>
+            <h1>This is HOMEPAGE</h1>
+
+            <div className="home__header">
+                <div className="home__header--left">
+                    
+                </div>
+                <div className="home__header--right">
+
+                </div>
+            </div>
+
+            <div className="home__body">
+
+            </div>
+        </div>
+    );
+}
 
 export default Home;
