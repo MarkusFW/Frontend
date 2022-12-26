@@ -1,26 +1,22 @@
 import React from "react";
 import "./App.css";
-import Home from "./pages/Home";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   return (
-    <Router>
     <div className="App">
-        
-          <Route path="/search">
-             <h1>This is searchpage</h1> {/* SearchPage */}
-            
+      <Router>
+        <Switch>
+          <Route path="/search" >
+            <SearchPage />
           </Route>
-
-          <Route path="/" component={<Home />}>
-            {/* Home */} <h1>yooooo lets build Google Clone </h1>
+          <Route path="/" > <Home /> </Route>
             
-            </Route>
-        
-      
+        </Switch>
+      </Router>
     </div>
-    </Router>
   );
 }
 
