@@ -1,62 +1,101 @@
 .home {
-  display: flex;
-  flex-direction: column;
+  background-color: whitesmoke;
   height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home__container {
+  height: 80%;
+  position: relative;
+}
+
+.home__containerCompendium {
+  position: absolute;
+  top: 250px;
+  left: 100px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.home__containerAbout{
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    visibility: hidden;
+  }
+
+.home__img {
+  height: 90%;
+}
+
+.home__img:hover {
+  opacity: 0.8;
+  transition: all 400ms ease;
+}
+
+.home__containerCompendium {
+    display: flex;
+  margin-right: 10px;
+  border: none !important;
+  color: blue !important;
+  font-weight: 900 !important;
+  border-radius: 30px !important;
+  height: 50px !important;
+  visibility: hidden;
+  /* makes the element stop at it last frame of its animation */
+}
+
+.home__containerAbout {
+    display: flex;
+  margin-right: 10px;
+  border: none !important;
+  color: blue !important;
+  font-weight: 900 !important;
+  border-radius: 30px !important;
+  height: 50px !important;
+  visibility: hidden;
+  /* makes the element stop at it last frame of its animation */
 }
 
 /*
 
-
-NAV BAR
-
+ANIMATIONS
 
 */
 
-.home__header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 30px;
-  align-items: center;
+.containerBtns__Compendium--active {
+  animation: flyCompendium 1000ms alternate-reverse;
+  animation-fill-mode: forwards;
+  visibility: visible;
 }
 
-.home__header a {
-  margin-right: 20px;
-  text-decoration: inherit;
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 15px;
+.containerBtns__About--active {
+    animation: flyAbout 1000ms alternate-reverse;
+    animation-fill-mode: forwards;
+    visibility: visible;
+ }
+
+@keyframes flyCompendium {
+  0% {
+    transform: translateX(-500px);
+  }
+
+  100% {
+    transform: translateX(50px);
+  }
 }
 
-.home__header a:hover {
-  text-decoration: underline;
-}
+@keyframes flyAbout {
+  0% {
+    transform: translateX(600px);
+  }
 
-.home__header--right {
-  display: flex;
-  align-items: center;
-  min-width: 13vw;
-  justify-content: space-between;
-}
-
-.home__header--right > .MuiSvgIcon-root {
-  margin-right: 20px;
-}
-
-/*
-
-
-GOOGLE SEARCHBAR
-
-
-*/
-
-.home__body {
-  flex: 1;
-  display: flex;
-  margin-top: 10%;
-  flex-direction: column;
-}
-
-.home__body > img {
-  object-fit: contain;
-  height: 100px;
+  100% {
+    transform: translateX(50px);
+  }
 }
